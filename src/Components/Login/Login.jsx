@@ -8,7 +8,12 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
-
+  useEffect(()=>{
+    localStorage.removeItem("userLogin");
+    localStorage.removeItem("accessTokenRegister");
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("token");
+  })
   const handleLogin = async (e) => {
     e.preventDefault();
 
